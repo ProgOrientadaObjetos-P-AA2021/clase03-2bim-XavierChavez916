@@ -18,44 +18,43 @@ public class Principal {
      */
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int opcion;
+        int op;
         double mat, suel;
         String ran;
         System.out.println("Ingrese 1 para ingresar estudiante\n"
                 + "Ingrese 2 para ingresar docente\n"
-                + "Ingrese 3 para ingresar policia");  
-        
-        opcion = entrada.nextInt();
-        entrada.nextLine();
-        System.out.println("Ingrese el nombre");
-        String nombre = entrada.nextLine();
-        System.out.println("Ingrese el apellido");
-        String apell = entrada.nextLine();
-        System.out.println("Ingrese la edad");
-        int edad = entrada.nextInt();
-        entrada.nextLine();
-        if(opcion == 1){
-            System.out.println("Ingrese el valor de matricula");
-            mat  = entrada.nextDouble();
-            Estudiante e = new Estudiante(nombre, apell, edad, mat);
-            System.out.println(e);
-        } else if(opcion == 2){
-            System.out.println("Ingrese el sueldo");
-            suel = entrada.nextDouble();
-            Docente d = new Docente(nombre, apell, edad, suel);
-            System.out.println(d);
-        } else if(opcion == 3){
-            System.out.println("Ingrese el rango");
-            ran = entrada.nextLine();
-            Policia p = new Policia(nombre, apell, edad, ran);
-            System.out.println(p);
-        } else{
+                + "Ingrese 3 para ingresar policia");
+        op = entrada.nextInt();
+        if (op == 1 && op == 2 && op == 3) {
+            entrada.nextLine();
+            System.out.println("Ingrese el nombre");
+            String nombre = entrada.nextLine();
+            System.out.println("Ingrese el apellido");
+            String apell = entrada.nextLine();
+            System.out.println("Ingrese la edad");
+            int edad = entrada.nextInt();
+            entrada.nextLine();
+            if (op == 1) {
+                System.out.println("Ingrese el valor de matricula");
+                mat = entrada.nextDouble();
+                Estudiante e = new Estudiante(nombre, apell, edad, mat);
+                System.out.println(e);
+            } else if (op == 2) {
+                System.out.println("Ingrese el sueldo");
+                suel = entrada.nextDouble();
+                Docente d = new Docente(nombre, apell, edad, suel);
+                System.out.println(d);
+            } else if (op == 3) {
+                System.out.println("Ingrese el rango");
+                ran = entrada.nextLine();
+                Policia p = new Policia(nombre, apell, edad, ran);
+                System.out.println(p);
+            }
+
+        } else {
             System.out.println("Error");
         }
-        
-        
-        
-        
+
         /*    
         // TODO code application logic here
         Estudiante e = new Estudiante("René", "Elizalde", 33, 100.2);
@@ -69,7 +68,7 @@ public class Principal {
         // la característia rango
         Policia p = new Policia("ALEX", "MENDOZA", 35, "Cabo"); // falta implementar
         System.out.println(p);
-        */
+         */
     }
-    
+
 }
